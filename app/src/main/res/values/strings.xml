@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Radiate</string>
+
+    <string name="onboarding_pages_next">next</string>
+    <string name="onboarding_pages_start">Start</string>
+    <string name="circular_arrow_button_description">Circular Arrow Button</string>
+    <string name="onboarding_title_journal">Journal Your Emotions</string>
+    <string name="onboarding_title_meditation">Guided Meditation for Calm</string>
+    <string name="onboarding_title_blogs">Discover Mental Wellness Blogs</string>
+    <string name="onboarding_title_community">Connect with Care</string>
+    <string name="onboarding_description_journal">Effortlessly track your moods and moments. Discover patterns and nurture self-awareness with our journal feature.</string>
+    <string name="onboarding_description_meditation">Find peace with guided meditation and breathing exercises to relieve stress and enhance mindfulness.</string>
+    <string name="onboarding_description_blogs">Explore curated blogs on mental health, packed with insights and tips to boost resilience and well-being.</string>
+    <string name="onboarding_description_community">Join a supportive community to share and grow anonymously. Build meaningful connections without fear of judgment.</string>
+
 </resources>
