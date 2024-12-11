@@ -13,4 +13,7 @@
     <string name="onboarding_description_blogs">Explore curated blogs on mental health, packed with insights and tips to boost resilience and well-being.</string>
     <string name="onboarding_description_community">Join a supportive community to share and grow anonymously. Build meaningful connections without fear of judgment.</string>
 
+    <string name="signin_intro_text">Sign in to your account</string>
+    <string name="signin_hint_text">username or email</string>
+
 </resources>
