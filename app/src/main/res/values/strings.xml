@@ -18,5 +18,7 @@
     <string name="password_hint_text">password</string>
     <string name="forget_password_text">Forget password?</string>
     <string name="sign_in_text">Sign in</string>
+    <string name="register_text">New to Radiate?</string>
+    <string name="register_button_text">Register Here</string>
 
 </resources>
