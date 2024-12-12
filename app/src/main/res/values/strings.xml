@@ -14,6 +14,9 @@
     <string name="onboarding_description_community">Join a supportive community to share and grow anonymously. Build meaningful connections without fear of judgment.</string>
 
     <string name="signin_intro_text">Sign in to your account</string>
-    <string name="signin_hint_text">username or email</string>
+    <string name="username_hint_text">username or email</string>
+    <string name="password_hint_text">password</string>
+    <string name="forget_password_text">Forget password?</string>
+    <string name="sign_in_text">Sign in</string>
 
 </resources>
