@@ -1,7 +1,10 @@
 package com.example.radiate
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
@@ -9,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.size
 import androidx.viewpager2.widget.ViewPager2
 
 class OnboardingPages : AppCompatActivity() {
@@ -27,12 +31,28 @@ class OnboardingPages : AppCompatActivity() {
         val viewpager = findViewById<ViewPager2>(R.id.viewPager)
         viewpager.adapter=adapter
 
+        val nextBtn = findViewById<ImageButton>(R.id.imageBtnNext)
+
+        nextBtn.setOnClickListener {
+            if(viewpager.currentItem+1<items.size){
+                viewpager.currentItem+=1
+            }else{
+                startActivity(Intent(this,SigninPage::class.java))
+                finish()
+            }
+        }
+
         setUpIndicators(items.size)
         setCurrentIndicator(0)
 
         viewpager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
             override fun onPageSelected(position: Int) {
                 setCurrentIndicator(position)
+                if(position == items.lastIndex){
+                    nextBtn.setBackgroundResource(R.drawable.fab_button_background_tick)
+                }else{
+                    nextBtn.setBackgroundResource(R.drawable.fab_custom_background)
+                }
             }
         })
 

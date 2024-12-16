@@ -20,5 +20,8 @@
     <string name="sign_in_text">Sign in</string>
     <string name="register_text">New to Radiate?</string>
     <string name="register_button_text">Register Here</string>
+    
+    <string name="forget_password">Forget password</string>
+    <string name="enter_your_email">Enter your email</string>
 
 </resources>
