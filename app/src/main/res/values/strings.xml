@@ -23,5 +23,8 @@
     
     <string name="forget_password">Forget password</string>
     <string name="enter_your_email">Enter your email</string>
+    <string name="example_email">abc@xyz.com</string>
+    <string name="submit">Submit</string>
+    <string name="back_to_login">Back to Login</string>
 
 </resources>
