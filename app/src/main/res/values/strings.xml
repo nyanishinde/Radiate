@@ -14,25 +14,31 @@
     <string name="onboarding_description_community">Join a supportive community to share and grow anonymously. Build meaningful connections without fear of judgment.</string>
 
     <string name="signin_intro_text">Sign in to your account</string>
-    <string name="username_hint_text">username or email</string>
-    <string name="password_hint_text">password</string>
+    <string name="username_hint_text">Username or Email</string>
+    <string name="password_hint_text">Password</string>
     <string name="forget_password_text">Forget password?</string>
     <string name="sign_in_text">Sign in</string>
     <string name="register_text">New to Radiate?</string>
     <string name="register_button_text">Register Here</string>
 
-    <string name="forget_password">Forget password</string>
-    <string name="enter_your_email">Enter your email</string>
+    <string name="forget_password">Forget password ?</string>
+    <string name="enter_your_email">Enter your email:</string>
     <string name="example_email">abc@xyz.com</string>
     <string name="submit">Submit</string>
     <string name="back_to_login">Back to Login</string>
 
     <string name="register_message">The journey to self-love starts within.\n Let\'s take the first step together.</string>
     <string name="register_text_display">Let’s get to know you better!</string>
-    <string name="register_username">Username</string>
-    <string name="register_email">Email</string>
-    <string name="register_user_email">User email</string>
-    <string name="register_password">Password</string>
-    <string name="register_confirm_password">Confirm password</string>
+    <string name="register_username_hint">Username</string>
+    <string name="register_username">Username:</string>
+    <string name="register_email_hint">Email</string>
+    <string name="register_user_email">User email:</string>
+    <string name="register_password_hint">Password</string>
+    <string name="register_password">Password:</string>
+    <string name="register_confirm_password_hint">Confirm password</string>
+    <string name="register_confirm_password">Re-enter password:</string>
+    <string name="register_password_required_text">\u2022 Your password must be at least 8 characters long and include a mix of letters, numbers, and special characters</string>
+    <string name="join_radiate">Join Radiate</string>
+    <string name="join_using_google">Join using Google</string>
 
 </resources>
