@@ -31,6 +31,7 @@
     <string name="register_text_display">Let’s get to know you better!</string>
     <string name="register_username">Username</string>
     <string name="register_email">Email</string>
+    <string name="register_user_email">User email</string>
     <string name="register_password">Password</string>
     <string name="register_confirm_password">Confirm password</string>
 
