@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menuReminder"
+        android:icon="@drawable/icon_reminder_inactive"
+        android:title="@string/reminder"/>
+
+    <item android:id="@+id/menuJournal"
+        android:icon="@drawable/icon_journal_inactive"
+        android:title="@string/journal"/>
+
+    <item android:id="@+id/menuHome"
+        android:icon="@drawable/icon_home_inactive"
+        android:title="@string/home"/>
+
+    <item android:id="@+id/menuBlogs"
+        android:icon="@drawable/icon_blogs_inactive"
+        android:title="@string/blogs"/>
+
+    <item android:id="@+id/menuProfile"
+        android:icon="@drawable/icon_profile_inactive"
+        android:title="@string/profile"/>
+
+</menu>
