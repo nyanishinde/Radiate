@@ -48,5 +48,4 @@ class HomePage : AppCompatActivity() {
             .replace(R.id.frameLayoutContainer,fragment)
             .commit()
     }
-
 }

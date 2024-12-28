@@ -49,4 +49,8 @@
     <string name="profile">Profile</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="home_page_quote">\"Do something today that your future self will thank you for.\"</string>
+    <string name="home_page_quote_writer">~Sean Patrick Flanery</string>
+    <string name="home_page_question">What\'s your mood today?</string>
 </resources>
