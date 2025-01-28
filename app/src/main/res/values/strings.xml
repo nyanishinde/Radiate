@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Radiate</string>
+    <string name="app_name">Santulan</string>
 
     <string name="onboarding_pages_next">next</string>
     <string name="onboarding_pages_start">Start</string>
@@ -53,4 +53,8 @@
     <string name="home_page_quote">\"Do something today that your future self will thank you for.\"</string>
     <string name="home_page_quote_writer">~Sean Patrick Flanery</string>
     <string name="home_page_question">What\'s your mood today?</string>
+    
+    <string name="journal_date">28</string>
+    <string name="journal_month_year_day">July 2002 Sunday</string>
+    <string name="journal_title">One more day developing Radiate</string>
 </resources>

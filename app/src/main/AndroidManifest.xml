@@ -22,9 +22,6 @@
             android:name=".ForgetPassword"
             android:exported="false" />
         <activity
-            android:name=".ForgetPassworx"
-            android:exported="false" />
-        <activity
             android:name=".SigninPage"
             android:exported="false" />
         <activity
