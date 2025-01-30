@@ -8,20 +8,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.ads.mediationtestsuite.viewmodels.ItemViewHolder
 import org.w3c.dom.Text
 
-class JournalAdapter(private val itemList:List<DCJournalItems>) : RecyclerView.Adapter<JournalAdapter.ItemViewHolder>() {
-    class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class JournalAdapter(private val itemList:List<DCJournalItems>) : RecyclerView.Adapter<JournalAdapter.JournalVieWHolder>() {
+    inner class JournalVieWHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title : TextView = itemView.findViewById(R.id.tvTitle)
         val date :TextView = itemView.findViewById(R.id.tvDate)
-        val monthAndYear : TextView = itemView.findViewById(R.id.tvMonthYearAndDay)
+        val monthAndYear : TextView = itemView.findViewById(R.id.tvMonthAndYear)
         val day : TextView = itemView.findViewById(R.id.tvDay)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JournalAdapter.ItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JournalVieWHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.listitem_journal,parent,false)
-        return ItemViewHolder(view)
+        return JournalVieWHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: JournalVieWHolder, position: Int) {
         val item = itemList[position]
         holder.title.text = item.title
         holder.date.text = item.date
