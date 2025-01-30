@@ -47,11 +47,23 @@
                     android:layout_marginEnd="16dp"/>
 
                 <TextView
+                    android:id="@+id/tvMonthYearAndDay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_gravity="center"
-                    android:text="@string/journal_month_year_day"
+                    android:text="@string/journal_month_year"
+                    android:fontFamily="@font/inika_regular"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/tvDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="@string/journal_day"
                     android:fontFamily="@font/inika_regular"
                     android:textColor="@color/black"
                     android:textSize="12sp"/>
@@ -69,15 +81,16 @@
                 android:layout_weight="4">
 
                 <TextView
+                    android:id="@+id/tvTitle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="@color/black"
-                    android:text="@string/journal_title"
-                    android:textSize="18sp"
                     android:fontFamily="@font/inika_regular"
                     android:gravity="center_vertical"
+                    android:paddingStart="12dp"
                     android:paddingEnd="12dp"
-                    android:paddingStart="12dp"/>
+                    android:text="@string/journal_title"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 

@@ -18,7 +18,7 @@
     <string name="password_hint_text">Password</string>
     <string name="forget_password_text">Forget password?</string>
     <string name="sign_in_text">Sign in</string>
-    <string name="register_text">New to Radiate?</string>
+    <string name="register_text">New to Santulit?</string>
     <string name="register_button_text">Register Here</string>
     <string name="sign_in_with_google">Sign in with Google</string>
 
@@ -39,7 +39,7 @@
     <string name="register_confirm_password_hint">Confirm password</string>
     <string name="register_confirm_password">Re-enter password:</string>
     <string name="register_password_required_text">\u2022 Your password must be at least 8 characters long and include a mix of letters, numbers, and special characters</string>
-    <string name="join_radiate">Join Radiate</string>
+    <string name="join_santulit">Join Santulit</string>
     <string name="join_using_google">Join using Google</string>
 
     <string name="reminder">Reminder</string>
@@ -53,8 +53,12 @@
     <string name="home_page_quote">\"Do something today that your future self will thank you for.\"</string>
     <string name="home_page_quote_writer">~Sean Patrick Flanery</string>
     <string name="home_page_question">What\'s your mood today?</string>
-    
+
     <string name="journal_date">28</string>
-    <string name="journal_month_year_day">July 2002 Sunday</string>
-    <string name="journal_title">One more day developing Radiate</string>
+    <string name="journal_month_year">July 2002</string>
+    <string name="journal_day">Sunday</string>
+    <string name="journal_title">One more day developing Santulit</string>
+    <string name="journal_greetings">Good morning Gyani</string>
+    <string name="journal_display_date">28-07-2025 Monday</string>
+    <string name="sort">sort</string>
 </resources>

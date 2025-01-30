@@ -185,7 +185,7 @@
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:minHeight="48dp"
-        android:text="@string/join_radiate"
+        android:text="@string/join_santulit"
         android:textSize="16sp"
         android:textColor="@color/white"
         android:fontFamily="@font/opensans"
