@@ -20,7 +20,7 @@ class HomePage : AppCompatActivity() {
             when(item.itemId) {
                 R.id.menuReminder -> {
                     item.setIcon(R.drawable.icon_reminder_active)
-                    loadFragment(HomeFragment())
+                    loadFragment(ReminderFragment())
                 }
                 R.id.menuJournal -> {
                     item.setIcon(R.drawable.icon_journal_active)

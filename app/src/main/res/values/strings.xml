@@ -61,4 +61,7 @@
     <string name="journal_greetings">Good morning Gyani</string>
     <string name="journal_display_date">28-07-2025 Monday</string>
     <string name="sort">sort</string>
+    <string name="untitled">Untitled</string>
+
+    <string name="write_journal_date">28 july 2002</string>
 </resources>
