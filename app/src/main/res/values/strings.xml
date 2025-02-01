@@ -64,4 +64,5 @@
     <string name="untitled">Untitled</string>
 
     <string name="write_journal_date">28 july 2002</string>
+    <string name="write_journal_entry_hint">Write your journal here</string>
 </resources>
