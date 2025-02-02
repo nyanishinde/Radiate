@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.Menu
@@ -13,6 +14,8 @@ import android.view.MenuItem
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -27,11 +30,8 @@ class WriteJournal : AppCompatActivity() {
     lateinit var plusIcon : ImageView
     lateinit var journalImage : ImageView
 
-    private val PICK_IMAGE_REQUEST = 1
-    private val CAMERA_REQUEST = 1
-    private val STORAGE_PERMISSION_CODE = 101
-    private val CAMERA_PERMISSION_CODE = 102
-
+    private lateinit var galleryLauncher:ActivityResultLauncher<Intent>
+    private lateinit var cameraLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,42 +62,87 @@ class WriteJournal : AppCompatActivity() {
         journalImage = findViewById<ImageView>(R.id.imgPreview)
         edtJournalContent = findViewById<EditText>(R.id.edtJournalContent)
 
+        //Initializing gallery launcher to display gallery and show selected image
+        galleryLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result->
+            if (result.resultCode == Activity.RESULT_OK){
+                val imageUri : Uri? = result.data?.data
+                imageUri?.let {
+                    journalImage.setImageURI(it)
+                    journalImage.visibility = ImageView.VISIBLE
+                    plusIcon.visibility = ImageView.INVISIBLE
+                }
+            }
+        }
+
+        cameraLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result->
+            if (result.resultCode==Activity.RESULT_OK){
+                val imageBitmap=result.data?.extras?.get("data") as Bitmap
+                journalImage.setImageBitmap(imageBitmap)
+                journalImage.visibility = ImageView.VISIBLE
+                plusIcon.visibility = ImageView.INVISIBLE
+            }
+        }
+
         //Handling click event on the plus icon imageview to open the dialog box
         plusIcon.setOnClickListener {
             showImagePickerDialog()
         }
-
-
     }
 
     private fun showImagePickerDialog() {
-        val options = arrayOf("Choose from gallery", "Take a photo")
+        val option = arrayOf("Choose from gallery","Take a photo")
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Select Image")
-        builder.setItems(options){_, which->
+        builder.setItems(option){_, which->
             when(which){
-                0->openGallery()
-                1->openCamera()
+                0 -> openGallery()
+                1 -> openCamera()
             }
         }
         builder.show()
     }
 
-    private fun openCamera() {
-        if (ContextCompat.checkSelfPermission(this,Manifest.permission.CAMERA)!=PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA),CAMERA_PERMISSION_CODE)
+    //creating function to open gallery
+    private fun openGallery(){
+        //Checking if the current version in the mobile is > Tiramisu or not if yes then permissions will be accordingly
+        val permission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+            Manifest.permission.READ_MEDIA_IMAGES
         }else{
-            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            startActivityForResult(intent,CAMERA_REQUEST)
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        }
+
+        if (ContextCompat.checkSelfPermission(this,permission)!=PackageManager.PERMISSION_GRANTED){
+            requestPermissions(arrayOf(permission),101)
+        }else{
+            val intent = Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            galleryLauncher.launch(intent)
         }
     }
 
-    private fun openGallery() {
-        if (ContextCompat.checkSelfPermission(this,Manifest.permission.READ_EXTERNAL_STORAGE)!=PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),STORAGE_PERMISSION_CODE)
+    //creating function to open camera
+    private fun openCamera(){
+        if (ContextCompat.checkSelfPermission(this,Manifest.permission.CAMERA)!=PackageManager.PERMISSION_GRANTED){
+            requestPermissions(arrayOf(Manifest.permission.CAMERA),102)
         }else{
-            val intent = Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            startActivityForResult(intent,PICK_IMAGE_REQUEST)
+            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            cameraLauncher.launch(intent)
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        if (grantResults.isNotEmpty() && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+            when(requestCode){
+                101 -> openGallery()
+                102 -> openCamera()
+            }
+        }else{
+            Toast.makeText(this,"Permission Denied",Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -126,31 +171,6 @@ class WriteJournal : AppCompatActivity() {
                 true
             }
             else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (resultCode == Activity.RESULT_OK){
-            when(requestCode){
-                PICK_IMAGE_REQUEST ->{
-                    val imageUri: Uri? = data?.data
-                    imageUri?.let {
-                        Glide.with(this).load(it).into(journalImage)  // Load image into ImageView using Glide
-                        journalImage.visibility = ImageView.VISIBLE
-                        plusIcon.visibility = ImageView.INVISIBLE
-                    }
-                }
-                CAMERA_REQUEST -> {
-                // Handling image captured from the camera
-                    val imageBitmap = data?.extras?.get("data") as Bitmap
-                    journalImage.visibility = ImageView.VISIBLE
-                    plusIcon.visibility = ImageView.INVISIBLE
-                    journalImage.setImageBitmap(imageBitmap)  // Display the captured image
-
-                }
-            }
         }
     }
 }
