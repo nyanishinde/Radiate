@@ -87,7 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@drawable/custom_upload_container">
-
+                
                 <ImageView
                     android:id="@+id/imgPreview"
                     android:layout_width="match_parent"
@@ -100,6 +100,14 @@
                     android:layout_height="48dp"
                     android:layout_gravity="center"
                     android:src="@drawable/plus_two_toned"/>
+
+                <ImageView
+                    android:id="@+id/btnDeleteImage"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/icon_cross"
+                    android:layout_gravity="top|end"
+                    android:visibility="gone"/>
 
             </FrameLayout>
 

@@ -29,6 +29,7 @@ class WriteJournal : AppCompatActivity() {
     lateinit var edtJournalContent : EditText
     lateinit var plusIcon : ImageView
     lateinit var journalImage : ImageView
+    lateinit var crossIcon : ImageView
 
     private lateinit var galleryLauncher:ActivityResultLauncher<Intent>
     private lateinit var cameraLauncher: ActivityResultLauncher<Intent>
@@ -58,9 +59,10 @@ class WriteJournal : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         //Initializing objects of image and content of journal
-        plusIcon=findViewById<ImageView>(R.id.imgPlusIcon)
-        journalImage = findViewById<ImageView>(R.id.imgPreview)
-        edtJournalContent = findViewById<EditText>(R.id.edtJournalContent)
+        plusIcon=findViewById(R.id.imgPlusIcon)
+        journalImage = findViewById(R.id.imgPreview)
+        edtJournalContent = findViewById(R.id.edtJournalContent)
+        crossIcon = findViewById(R.id.btnDeleteImage)
 
         //Initializing gallery launcher to display gallery and show selected image
         galleryLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result->
@@ -70,16 +72,19 @@ class WriteJournal : AppCompatActivity() {
                     journalImage.setImageURI(it)
                     journalImage.visibility = ImageView.VISIBLE
                     plusIcon.visibility = ImageView.INVISIBLE
+                    crossIcon.visibility = ImageView.VISIBLE
                 }
             }
         }
 
+        //Initializing camera launcher to display capture image
         cameraLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result->
             if (result.resultCode==Activity.RESULT_OK){
                 val imageBitmap=result.data?.extras?.get("data") as Bitmap
                 journalImage.setImageBitmap(imageBitmap)
                 journalImage.visibility = ImageView.VISIBLE
                 plusIcon.visibility = ImageView.INVISIBLE
+                crossIcon.visibility = ImageView.VISIBLE
             }
         }
 
@@ -87,8 +92,24 @@ class WriteJournal : AppCompatActivity() {
         plusIcon.setOnClickListener {
             showImagePickerDialog()
         }
+
+        //Handling the long press event on the image
+        journalImage.setOnLongClickListener {
+            showImagePickerDialog()
+            true
+        }
+
+        //Clearing the imageView on click of the cross button
+        crossIcon.setOnClickListener {
+            journalImage.setImageDrawable(null)
+            journalImage.visibility = ImageView.GONE
+            plusIcon.visibility = ImageView.VISIBLE
+            crossIcon.visibility=ImageView.GONE
+            true
+        }
     }
 
+    //Showing dialog box on click of the plus icon
     private fun showImagePickerDialog() {
         val option = arrayOf("Choose from gallery","Take a photo")
         val builder = AlertDialog.Builder(this)
@@ -129,11 +150,7 @@ class WriteJournal : AppCompatActivity() {
         }
     }
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
         if (grantResults.isNotEmpty() && grantResults[0]==PackageManager.PERMISSION_GRANTED){
@@ -162,7 +179,7 @@ class WriteJournal : AppCompatActivity() {
                 return true
             }
             R.id.deleteJournal ->{
-                Toast.makeText(this,"Deleted",Toast.LENGTH_SHORT).show()
+                showDeleteDialog()
                 true
             }
             R.id.clearJournal ->{
@@ -172,5 +189,29 @@ class WriteJournal : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun showDeleteDialog() {
+        //Creating the builder for delete dialog box (a kind of blueprint for desired dialog)
+        val deleteBuilder = AlertDialog.Builder(this)
+        deleteBuilder.setTitle("Delete Journal")
+        deleteBuilder.setMessage("Are you sure you want to delete this journal?")
+
+        //creating positive button "Yes"
+        deleteBuilder.setPositiveButton("Yes"){dialog, _->
+            //Implement the logic to delete journal
+            dialog.dismiss()
+            onBackPressed()
+            Toast.makeText(this,"Journal deleted",Toast.LENGTH_SHORT).show()
+        }
+
+        //Creating negative button "No"
+        deleteBuilder.setNeutralButton("No"){dialog,_->
+            dialog.dismiss()
+        }
+
+        //Creating the dialog box using the builder
+        val deleteDialog = deleteBuilder.create()
+        deleteDialog.show()
     }
 }
