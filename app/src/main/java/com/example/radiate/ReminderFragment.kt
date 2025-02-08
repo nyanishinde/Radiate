@@ -5,23 +5,48 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
+import androidx.cardview.widget.CardView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ReminderFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reminder, container, false)
+       val view = inflater.inflate(R.layout.fragment_reminder, container, false)
+
+
+        //Initializing ids of cards and widget
+        val toolbar = view.findViewById<Toolbar>(R.id.toolbarReminder)
+        val iconProfile = view.findViewById<ImageView>(R.id.imgReminderProfile)
+        val cardTodayTasks = view.findViewById<CardView>(R.id.cardTodayTasks)
+        val cardWeeklyGoals = view.findViewById<CardView>(R.id.cardWeeklyGoals)
+        val cardMonthlyGoals = view.findViewById<CardView>(R.id.cardMonthlyGoals)
+        val cardUpcomingEvents = view.findViewById<CardView>(R.id.cardUpcomingEvents)
+        val fabAddReminder = view.findViewById<FloatingActionButton>(R.id.fabAddReminder)
+        iconProfile.setOnClickListener {
+            Toast.makeText(context, "Profile",Toast.LENGTH_SHORT).show()
+        }
+        cardTodayTasks.setOnClickListener {
+            Toast.makeText(context, "Today's tasks", Toast.LENGTH_SHORT).show()
+        }
+        cardWeeklyGoals.setOnClickListener {
+           Toast.makeText(context, "Weekly goals", Toast.LENGTH_SHORT).show()
+        }
+        cardMonthlyGoals.setOnClickListener {
+            Toast.makeText(context, "Monthly goals", Toast.LENGTH_SHORT).show()
+        }
+        cardUpcomingEvents.setOnClickListener {
+            Toast.makeText(context, "Upcoming events", Toast.LENGTH_SHORT).show()
+        }
+        fabAddReminder.setOnClickListener {
+            Toast.makeText(context,"FAB Clicked",Toast.LENGTH_SHORT).show()
+        }
+
+
+        return view
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        //add code here
-    }
 }

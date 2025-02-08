@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Santulit</string>
 
     <string name="onboarding_pages_next">next</string>
@@ -59,10 +59,22 @@
     <string name="journal_day">Sunday</string>
     <string name="journal_title">One more day developing Santulit</string>
     <string name="journal_greetings">Good morning Gyani</string>
-    <string name="journal_display_date">28-07-2025 Monday</string>
+    <string name="journal_display_date" tools:ignore="TypographyDashes">28–07-2025 Monday</string>
     <string name="sort">sort</string>
     <string name="untitled">Untitled</string>
 
     <string name="write_journal_date">28 july 2002</string>
     <string name="write_journal_entry_hint">Write your journal here</string>
+
+    <string name="reminder_track_your_progress">Track your progress</string>
+    <string name="reminder_weekly_overview">Weekly Overview</string>
+    <string name="reminder_week">Jan 01 - Jan 07</string>
+    <string name="reminder_text_graph_main">You are doing good!</string>
+    <string name="reminder_text_graph">You almost reached your daily goals</string>
+    <string name="reminder_track">Track</string>
+    <string name="reminder_today_tasks">Today’s tasks</string>
+    <string name="reminder_goals">Goals</string>
+    <string name="reminder_weekly_goals">Weekly goals</string>
+    <string name="reminder_monthly_goals">Monthly goals</string>
+    <string name="reminder_upcoming_events">Upcoming events</string>
 </resources>
