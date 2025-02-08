@@ -79,4 +79,7 @@
     <string name="reminder_upcoming_events">Upcoming events</string>
 
     <string name="upcoming_events">Upcoming events</string>
+    <string name="upcoming_event_example">Board Meeting</string>
+    <string name="upcoming_event_timings">Timing</string>
+    <string name="upcoming_time_example">11:00 am - \n 01:00 pm</string>
 </resources>

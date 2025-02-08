@@ -4,6 +4,10 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+
+private lateinit var recyclerView: RecyclerView
 
 class UpcomingEvents : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +19,9 @@ class UpcomingEvents : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.title=""
         supportActionBar?.setDisplayHomeAsUpEnabled(true) //setting the back button on toolbar
+
+        recyclerView = findViewById(R.id.recyclerViewEvents)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
     }
 
