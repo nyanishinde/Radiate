@@ -1,5 +1,6 @@
 package com.example.radiate
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -39,7 +40,8 @@ class ReminderFragment : Fragment() {
             Toast.makeText(context, "Monthly goals", Toast.LENGTH_SHORT).show()
         }
         cardUpcomingEvents.setOnClickListener {
-            Toast.makeText(context, "Upcoming events", Toast.LENGTH_SHORT).show()
+            val intent = Intent(requireContext(),UpcomingEvents::class.java)
+            startActivity(intent)
         }
         fabAddReminder.setOnClickListener {
             Toast.makeText(context,"FAB Clicked",Toast.LENGTH_SHORT).show()

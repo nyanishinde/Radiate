@@ -77,4 +77,6 @@
     <string name="reminder_weekly_goals">Weekly goals</string>
     <string name="reminder_monthly_goals">Monthly goals</string>
     <string name="reminder_upcoming_events">Upcoming events</string>
+
+    <string name="upcoming_events">Upcoming events</string>
 </resources>
