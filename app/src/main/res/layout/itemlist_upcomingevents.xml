@@ -19,12 +19,19 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <ImageView
+            <TextView
+                android:id="@+id/tvItemEventDate"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/img_event_date"
+                android:background="@drawable/circular_background_for_date"
+                android:text="@string/date_ten"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="14sp"
                 android:layout_margin="12dp"/>
+
             <TextView
+                android:id="@+id/tvItemEventTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/upcoming_event_example"
@@ -52,6 +59,7 @@
                     android:textColor="@color/black"
                     android:fontFamily="@font/inika_regular"/>
                 <TextView
+                    android:id="@+id/tvItemEventTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/upcoming_time_example"
