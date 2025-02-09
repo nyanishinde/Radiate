@@ -20,6 +20,7 @@ class UpcomingEvents : AppCompatActivity() {
         supportActionBar?.title=""
         supportActionBar?.setDisplayHomeAsUpEnabled(true) //setting the back button on toolbar
 
+        //Setting up recyclerView
         recyclerView = findViewById(R.id.recyclerViewEvents)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
