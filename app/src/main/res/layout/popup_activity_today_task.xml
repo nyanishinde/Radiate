@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/softpinkwhitebackground">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Title of layout -->
+            <TextView
+                android:id="@+id/tvTodayTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/today_task"
+                android:textSize="20sp"
+                android:fontFamily="@font/inika_regular"
+                android:textColor="@color/black"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <!-- Today's date -->
+            <TextView
+                android:id="@+id/tvTodayDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/task_date"
+                android:textSize="12sp"
+                android:fontFamily="@font/inika_regular"
+                android:textColor="@color/grey"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTodayTask"/>
+
+            <!-- Task counter-->
+            <TextView
+                android:id="@+id/tvTaskCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/task_counter"
+                android:textColor="@color/grey"
+                android:textSize="12sp"
+                android:fontFamily="@font/inika_regular"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTodayTask"/>
+
+            <!-- list of tasks -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTodayTask"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:maxHeight="140dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTodayDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Divider -->
+            <View
+                android:id="@+id/viewDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintTop_toBottomOf="@id/rvTodayTask"/>
+
+            <!-- To add more task -->
+            <TextView
+                android:id="@+id/tvAddMoreTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_more_task"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inika_regular"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/viewDivider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Cancel button -->
+            <TextView
+                android:id="@+id/tvBtnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:textSize="16sp"
+                android:fontFamily="@font/inika_regular"
+                android:textColor="@color/grey"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintEnd_toStartOf="@id/tvBtnDone"
+                app:layout_constraintTop_toBottomOf="@id/tvAddMoreTask"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <!-- ok button -->
+            <TextView
+                android:id="@+id/tvBtnDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/done"
+                android:textSize="16sp"
+                android:fontFamily="@font/inika_regular"
+                android:textColor="@color/black"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintTop_toBottomOf="@id/tvAddMoreTask"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

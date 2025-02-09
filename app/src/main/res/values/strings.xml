@@ -83,4 +83,11 @@
     <string name="upcoming_event_timings">Timing</string>
     <string name="upcoming_time_example">11:00 am</string>
     <string name="date_ten">10</string>
+
+    <string name="today_task">Today\'s tasks</string>
+    <string name="task_date">01/01/2025</string>
+    <string name="task_counter">4/7</string>
+    <string name="add_more_task">+ Add more task</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
 </resources>
