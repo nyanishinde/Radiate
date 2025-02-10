@@ -39,7 +39,7 @@ class ReminderFragment : Fragment() {
            Toast.makeText(context, "Weekly goals", Toast.LENGTH_SHORT).show()
         }
         cardMonthlyGoals.setOnClickListener {
-//            Toast.makeText(context, "Monthly goals", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Monthly goals", Toast.LENGTH_SHORT).show()
         }
         cardUpcomingEvents.setOnClickListener {
             val intent = Intent(requireContext(),UpcomingEvents::class.java)
