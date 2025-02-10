@@ -31,7 +31,9 @@ class ReminderFragment : Fragment() {
             Toast.makeText(context, "Profile",Toast.LENGTH_SHORT).show()
         }
         cardTodayTasks.setOnClickListener {
-            Toast.makeText(context, "Today's tasks", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "Today's tasks", Toast.LENGTH_SHORT).show()
+            val taskDialog = ChecklistDialogFragment()
+            taskDialog.show(parentFragmentManager,"ChecklistDialog")
         }
         cardWeeklyGoals.setOnClickListener {
            Toast.makeText(context, "Weekly goals", Toast.LENGTH_SHORT).show()
