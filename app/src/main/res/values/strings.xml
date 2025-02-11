@@ -106,8 +106,8 @@
     </string-array>
 
     <string-array name="importance_option">
-        <item>low</item>
-        <item>med</item>
-        <item>high</item>
+        <item>Low</item>
+        <item>Med</item>
+        <item>High</item>
     </string-array>
 </resources>
