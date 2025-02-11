@@ -95,4 +95,6 @@
     <string name="reminder_title">Add title here</string>
     <string name="reminder_description">Description (optional)</string>
     <string name="reminder_time">9:00 AM</string>
+    <string name="repeat">Repeat</string>
+    <string name="frequency">Frequency</string>
 </resources>
