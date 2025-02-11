@@ -193,14 +193,14 @@
                     android:id="@+id/txtFrequency"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/frequency"
+                    android:text="@string/importance"
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     android:fontFamily="@font/inika_regular"
                     android:layout_marginStart="12dp"/>
 
                 <Spinner
-                    android:id="@+id/spinnerFrequency"
+                    android:id="@+id/spinnerImportance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="40dp"

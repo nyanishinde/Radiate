@@ -96,5 +96,18 @@
     <string name="reminder_description">Description (optional)</string>
     <string name="reminder_time">9:00 AM</string>
     <string name="repeat">Repeat</string>
-    <string name="frequency">Frequency</string>
+    <string name="importance">Importance</string>
+
+    <string-array name="repeat_options">
+        <item>Never</item>
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+    </string-array>
+
+    <string-array name="importance_option">
+        <item>low</item>
+        <item>med</item>
+        <item>high</item>
+    </string-array>
 </resources>
