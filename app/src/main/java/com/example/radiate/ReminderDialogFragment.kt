@@ -15,6 +15,7 @@ class ReminderDialogFragment:DialogFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.popup_activity_reminder,container,false)
 
+        //Initializing all view and their id's
         val reminderTitle = view.findViewById<EditText>(R.id.edtReminderTitle)
         val reminderDescription = view.findViewById<EditText>(R.id.edtReminderDescription)
         val reminderDate = view.findViewById<EditText>(R.id.edtReminderDate)
