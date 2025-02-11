@@ -20,10 +20,12 @@ class ReminderDialogFragment:DialogFragment() {
         val reminderDescription = view.findViewById<EditText>(R.id.edtReminderDescription)
         val reminderDate = view.findViewById<EditText>(R.id.edtReminderDate)
         val reminderTime = view.findViewById<EditText>(R.id.edtReminderTime)
-        val repeat = view.findViewById<Spinner>(R.id.spinnerRepeat)
-        val importance = view.findViewById<Spinner>(R.id.spinnerImportance)
         val btnCancel = view.findViewById<TextView>(R.id.btnCancel)
         val btnDone = view.findViewById<TextView>(R.id.btnDone)
+        val repeat = view.findViewById<Spinner>(R.id.spinnerRepeat)
+        val importance = view.findViewById<Spinner>(R.id.spinnerImportance)
+
+
         return view
     }
 
