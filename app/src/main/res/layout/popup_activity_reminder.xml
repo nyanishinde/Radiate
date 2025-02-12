@@ -144,74 +144,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
-            android:id="@+id/spinnerSection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:gravity="center_vertical"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/timeSection">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/txtRepeat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/repeat"
-                    android:textSize="12sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/inika_regular"
-                    android:layout_marginStart="4dp"/>
-
-                <Spinner
-                    android:id="@+id/spinnerRepeat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="40dp"
-                    android:background="@drawable/custom_background_edittext"
-                    android:gravity="center"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="8dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/txtFrequency"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/importance"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/inika_regular"
-                    android:layout_marginStart="12dp"/>
-
-                <Spinner
-                    android:id="@+id/spinnerImportance"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="40dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/custom_background_edittext" />
-
-            </LinearLayout>
-        </LinearLayout>
-
         <TextView
             android:id="@+id/btnDone"
             android:layout_width="wrap_content"
@@ -223,7 +155,7 @@
             android:layout_marginEnd="28dp"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
-            app:layout_constraintTop_toBottomOf="@id/spinnerSection"
+            app:layout_constraintTop_toBottomOf="@id/timeSection"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -239,7 +171,7 @@
             android:layout_marginBottom="12dp"
             app:layout_constraintEnd_toStartOf="@id/btnDone"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/spinnerSection"/>
+            app:layout_constraintTop_toBottomOf="@id/timeSection"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

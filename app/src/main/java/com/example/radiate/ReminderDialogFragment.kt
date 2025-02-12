@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
@@ -22,8 +24,6 @@ class ReminderDialogFragment:DialogFragment() {
         val reminderTime = view.findViewById<EditText>(R.id.edtReminderTime)
         val btnCancel = view.findViewById<TextView>(R.id.btnCancel)
         val btnDone = view.findViewById<TextView>(R.id.btnDone)
-        val repeat = view.findViewById<Spinner>(R.id.spinnerRepeat)
-        val importance = view.findViewById<Spinner>(R.id.spinnerImportance)
 
         btnCancel.setOnClickListener {
             dismiss()
