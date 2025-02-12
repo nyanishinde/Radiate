@@ -25,8 +25,21 @@ class ReminderDialogFragment:DialogFragment() {
         val repeat = view.findViewById<Spinner>(R.id.spinnerRepeat)
         val importance = view.findViewById<Spinner>(R.id.spinnerImportance)
 
+        btnCancel.setOnClickListener {
+            dismiss()
+        }
+
+        btnDone.setOnClickListener {
+            dismiss()
+        }
 
         return view
+    }
+
+    override fun onStart() {
+        super.onStart()
+        dialog?.window?.setLayout((resources.displayMetrics.widthPixels * 0.85).toInt(),ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
     }
 
 }

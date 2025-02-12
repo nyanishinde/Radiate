@@ -47,6 +47,8 @@ class ReminderFragment : Fragment() {
         }
         fabAddReminder.setOnClickListener {
             Toast.makeText(context,"FAB Clicked",Toast.LENGTH_SHORT).show()
+            val reminderDialog = ReminderDialogFragment()
+            reminderDialog.show(parentFragmentManager,"ReminderDialog")
         }
 
 
