@@ -1,5 +1,6 @@
 package com.example.radiate
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Bundle
@@ -8,12 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.TextView
 import java.util.*
 import androidx.fragment.app.DialogFragment
 class ReminderDialogFragment:DialogFragment() {
 
+    @SuppressLint("DefaultLocale")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.popup_activity_reminder,container,false)
 
@@ -27,9 +28,11 @@ class ReminderDialogFragment:DialogFragment() {
         val imgBtnCalender = view.findViewById<ImageButton>(R.id.imgBtnCalender)
         val imgBtnTime = view.findViewById<ImageButton>(R.id.imgBtnTime)
 
+
         // creating instance of calender to get current date and time
         val calender = Calendar.getInstance()
 
+        //Setting current date as hint
         val defaultDate = String.format("%d/%d/%d",calender.get(Calendar.DAY_OF_MONTH),calender.get(Calendar.MONTH)+1,calender.get(Calendar.YEAR))
         reminderDate.setHint(defaultDate)
         // Date picker dialog
@@ -47,8 +50,10 @@ class ReminderDialogFragment:DialogFragment() {
             datePickerDialog.show()
         }
 
+        //Setting current time as hint
         val defaultTime = String.format("%02d:%02d",calender.get(Calendar.HOUR_OF_DAY),calender.get(Calendar.MINUTE))
         reminderTime.setHint(defaultTime)
+        //Time picker dialog
         imgBtnTime.setOnClickListener {
             val timePickerDialog = TimePickerDialog(
                 requireContext(),
