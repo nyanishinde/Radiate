@@ -52,7 +52,7 @@ class ReminderFragment : Fragment() {
         }
 
 
-        return view
+        return viewR
     }
 
 }
