@@ -19,9 +19,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.bumptech.glide.Glide
 
 
 class WriteJournal : AppCompatActivity() {
@@ -109,7 +107,7 @@ class WriteJournal : AppCompatActivity() {
         }
     }
 
-    //Showing dialog box on click of the plus icon
+    //Showing dialog box on click of the plus ic
     private fun showImagePickerDialog() {
         val option = arrayOf("Choose from gallery","Take a photo")
         val builder = AlertDialog.Builder(this)

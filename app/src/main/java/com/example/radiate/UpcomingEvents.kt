@@ -6,7 +6,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlin.math.E
 
 private lateinit var recyclerView: RecyclerView
 private lateinit var eventAdapter:EventAdapter
